@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - EasyPages</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Animated Message */
+    #form-status {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success {
+      color: #ffe600;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="navbar">
+    <div class="logo"><span class="highlight">EASY</span>PAGES</div>
+
+    <!-- Mobile toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+
+    <!-- Navigation aligned right -->
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="prices.html" class="nav-link">Prices</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section class="contact-section">
+      <div class="contact-wrapper">
+        <div class="contact-left">
+          <h1>Contact Us For Premium Printing Service.</h1>
+          <p>We're ready to help you with your project. Fill out the form or message us on social media!</p>
+
+          <div class="social-icons">
+            <a href="https://wa.me/60109552024" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/easypages.kuantan" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/printing_murah_kuantan/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@printing_murah_kuantan" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+
+          <div class="contact-details">
+            <p><strong>Phone:</strong> <a href="tel:+60109552024">+60 10-955 2024</a></p>
+            <p><strong>Email:</strong> <a href="mailto:sales@easypages.com.my">sales@easypages.com.my</a></p>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <form id="contact-form" action="https://formspree.io/f/myzjrzwr" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+
+          <!-- Success/Error Message -->
+          <div id="form-status"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          status.className = 'success';
+          status.textContent = '✅ Your message has been sent successfully!';
+          disableForm();
+
+          showMessageAndFadeOut();
+        } else {
+          status.className = 'error';
+          status.textContent = '❌ Something went wrong. Please try again later.';
+          status.style.display = 'block';
+        }
+      } catch (error) {
+        status.className = 'error';
+        status.textContent = '❌ Submission failed. Check your internet connection.';
+        status.style.display = 'block';
+      }
+    });
+
+    function showMessageAndFadeOut() {
+      status.style.display = 'block';
+      setTimeout(() => {
+        status.style.transition = 'opacity 1s ease';
+        status.style.opacity = '0';
+      }, 5000); // Show for 5 seconds
+    }
+
+    function disableForm() {
+      [...form.elements].forEach(el => el.disabled = true);
+    }
+  </script>
+</body>
+</html>
