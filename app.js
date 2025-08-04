@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (res.ok) {
           form.reset();
           status.className = 'success';
-          status.textContent = '✅ Your message has been sent successfully!';
+          // Use .innerHTML to add a clickable link
+          status.innerHTML = '✅ Your message has been sent successfully! <br><br> <a href="https://g.page/r/CYRtDY_TGG-jEAE/review" target="_blank" style="color: #ffe600; text-decoration: underline;">Please consider leaving us a review!</a>';
         } else {
           throw new Error('Network response was not ok.');
         }
