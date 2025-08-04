@@ -176,7 +176,7 @@ header {
    Homepage Styles
    ================================= */
 .hero-section {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Landing_Page-02.png') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Landing_Page-02.webp') no-repeat center center/cover;
   height: calc(100vh - 54px);
   display: flex;
   align-items: center;
