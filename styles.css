@@ -1475,8 +1475,13 @@ form button:hover {
 
 /* --- Responsive styles for mobile --- */
 @media (max-width: 768px) {
+  .eperolehan-section {
+    padding-left: 5px;  /* Reduced from 20px */
+    padding-right: 5px; /* Reduced from 20px */
+  }
+
   .eperolehan-box {
-    padding: 30px 20px;
+    padding: 30px 15px;
   }
 
   .ep-content-grid {
