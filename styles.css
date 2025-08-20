@@ -1335,3 +1335,193 @@ form button:hover {
     font-size: 32px;
   }
 }
+
+/* =====================================================
+   E-Perolehan Section Styles (Final Corrected Version)
+   ===================================================== */
+
+/* --- Main Section Styles (Desktop First) --- */
+.eperolehan-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.eperolehan-section h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+  color: #ffe600;
+}
+
+.eperolehan-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 60px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eperolehan-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ep-content-grid {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.ep-cert-image {
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.ep-cert-image:hover {
+  transform: scale(1.05);
+}
+
+.ep-cert-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  display: block;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.ep-cert-details {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  /* This is the correct DESKTOP alignment */
+  align-items: flex-start;
+  text-align: left;
+}
+
+.eperolehan-box h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.eperolehan-box .ep-number {
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(145deg, #b39700, #ffe600);
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+  padding: 12px 22px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.eperolehan-box span {
+  font-size: 18px;
+  color: #ccc;
+  line-height: 1.6;
+  display: block;
+}
+
+.ep-strengths {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  /* Ensures the list block takes up normal space on desktop */
+  display: block;
+}
+
+.ep-strengths li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+.ep-strengths li i {
+  color: #ffe600;
+  font-size: 20px;
+  margin-right: 12px;
+  width: 22px;
+}
+
+.btn-contact-ep {
+  display: inline-block;
+  background: #ffe600;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.btn-contact-ep:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.2);
+}
+
+/* --- Responsive styles for mobile --- */
+@media (max-width: 768px) {
+  .eperolehan-box {
+    padding: 30px 20px;
+  }
+
+  .ep-content-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .eperolehan-box h3 {
+    font-size: 22px;
+  }
+
+  .eperolehan-box .ep-number {
+    font-size: 17px;
+    padding: 10px 10px;
+    word-break: break-all;
+  }
+
+  .eperolehan-box span {
+    font-size: 15px;
+  }
+  
+  /* This is the correct MOBILE alignment */
+  .ep-cert-details {
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* This makes the list look centered on MOBILE */
+  .ep-strengths {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .btn-contact-ep {
+    align-self: center; /* This centers the button on mobile */
+  }
+}
+
+/* Footer E-Perolehan Style */
+.footer-ep {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.footer-ep i {
+  color: #ffe600;
+  margin-right: 8px;
+}

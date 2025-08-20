@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (modal) {
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.close-button');
-    const galleryImages = document.querySelectorAll('.project-image-gallery img, .gallery-grid img, .collage-grid img');
+    const galleryImages = document.querySelectorAll('.project-image-gallery img, .gallery-grid img, .collage-grid img, .ep-cert-image img');
 
     galleryImages.forEach(img => {
       img.addEventListener('click', function() {
