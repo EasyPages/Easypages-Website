@@ -1530,3 +1530,174 @@ form button:hover {
   color: #ffe600;
   margin-right: 8px;
 }
+
+/* =================================
+   Award Section Styles
+   ================================= */
+.award-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #000000, #111111);
+  text-align: center;
+}
+
+.award-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(30, 30, 30, 0.6);
+  border: 2px solid #ffe600; /* Gold border */
+  border-radius: 20px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(255, 230, 0, 0.15);
+}
+
+/* A glowing background effect behind the award */
+.award-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,230,0,0.1) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.award-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.award-icon-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.award-icon-wrapper i {
+  font-size: 120px;
+  color: #ffe600;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.award-details {
+  flex: 2;
+  text-align: left;
+}
+
+.award-details h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.award-details .highlight {
+  color: #ffe600;
+}
+
+.award-details h3 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #ccc;
+  margin-bottom: 20px;
+  font-style: italic;
+  border-left: 4px solid #ffe600;
+  padding-left: 15px;
+}
+
+.award-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Mobile Responsiveness for Award */
+@media (max-width: 768px) {
+  .award-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .award-details {
+    text-align: center;
+  }
+  
+  .award-details h3 {
+    border-left: none;
+    border-bottom: 3px solid #ffe600;
+    padding-left: 0;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .award-icon-wrapper i {
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+/* =================================
+   Centered Award Badge Styles
+   ================================= */
+
+/* This wrapper centers the card */
+.award-wrapper-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px; /* Space between Award and the 3 boxes below */
+}
+
+/* Specific styling for the Award Card */
+.award-highlight-card {
+  max-width: 500px;       
+  width: 100%;            
+  border: 2px solid #ffe600; 
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.15); 
+  
+  /* NEW: Forces all content inside to center */
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure the icon and text inside the award card are gold */
+.award-highlight-card i,
+.award-highlight-card h3 {
+  color: #ffe600;
+}
+
+/* Ensure the icon and text inside the award card are gold */
+.award-highlight-card i,
+.award-highlight-card h3 {
+  color: #ffe600;
+}
+
+/* Style for the Award Image in About Page */
+.award-full-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px; /* Prevents the image from being too massive */
+  object-fit: contain;
+  border-radius: 10px; /* Softens the corners */
+  
+  /* Adds a gold glow behind the photo to match the theme */
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.2); 
+  border: 1px solid rgba(255, 230, 0, 0.3);
+  
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Slight zoom when hovering over the award photo */
+.award-full-image:hover {
+  transform: scale(1.02);
+}
